@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CREATIVE.ARCHITECT - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e4e2e4",
+                        "secondary-fixed": "#d9e2ff",
+                        "tertiary": "#e7bf99",
+                        "inverse-surface": "#e4e2e4",
+                        "surface-bright": "#39393b",
+                        "surface-variant": "#343536",
+                        "surface-container": "#1f1f21",
+                        "surface-container-highest": "#343536",
+                        "surface-container-low": "#1b1b1d",
+                        "surface-container-lowest": "#0e0e10",
+                        "secondary": "#bcc6e6",
+                        "primary": "#b9c7e4",
+                        "surface-tint": "#b9c7e4",
+                        "on-secondary": "#263049",
+                        "surface-container-high": "#2a2a2c",
+                        "primary-container": "#0a192f",
+                        "on-secondary-container": "#aab4d4",
+                        "on-tertiary-container": "#9d7b5a",
+                        "outline-variant": "#44474d",
+                        "background": "#131315",
+                        "on-primary-container": "#74829d",
+                        "tertiary-fixed-dim": "#e7bf99",
+                        "on-secondary-fixed-variant": "#3c4661",
+                        "secondary-container": "#3c4661",
+                        "inverse-primary": "#515f78",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#0d1c32",
+                        "tertiary-container": "#281400",
+                        "outline": "#8f9097",
+                        "on-surface": "#e4e2e4",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c5c6cd",
+                        "on-tertiary-fixed": "#2b1701",
+                        "surface": "#131315",
+                        "on-tertiary": "#432b10",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-dim": "#131315",
+                        "on-primary-fixed-variant": "#39475f",
+                        "on-secondary-fixed": "#101b33",
+                        "on-primary": "#233148",
+                        "inverse-on-surface": "#303032",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "tertiary-fixed": "#ffdcbd",
+                        "secondary-fixed-dim": "#bcc6e6",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#5d4124"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "section-gap-mobile": "80px",
+                        "gutter": "24px",
+                        "section-gap": "160px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "mono-code": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "mono-label": ["13px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "mono-code": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["15px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A192F; /* Level 0 Base */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(100, 255, 218, 0.03), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(231, 191, 153, 0.03), transparent 25%);
+        }
+        
+        .glass-card {
+            background-color: rgba(17, 34, 64, 0.7); /* Level 1 */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 10px rgba(100, 255, 218, 0.05); /* Level 2 */
+        }
+        
+        .gradient-border {
+            position: relative;
+        }
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .btn-primary {
+            border: 1px solid #64FFDA;
+            color: #64FFDA;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+        }
+        
+        .text-accent-gold {
+            color: #e7bf99; /* tertiary */
+        }
+        .text-accent-teal {
+            color: #b9c7e4; /* primary */
+        }
+    </style>
+</head>
+<body class="text-on-background min-h-screen overflow-x-hidden selection:bg-tertiary/30 selection:text-tertiary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 md:px-16 py-6 bg-surface/70 backdrop-blur-lg border-b border-primary/10 transition-all duration-500 ease-out shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tighter" href="#">CREATIVE.ARCHITECT</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8 font-mono-label text-mono-label uppercase tracking-widest">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 hover:bg-primary/5 hover:backdrop-blur-xl px-3 py-2 rounded" href="#">01. Work</a>
+<a class="text-tertiary-fixed font-bold border-b border-tertiary-fixed pb-1 hover:bg-primary/5 hover:backdrop-blur-xl px-3 py-2 rounded" href="#">02. About</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 hover:bg-primary/5 hover:backdrop-blur-xl px-3 py-2 rounded" href="#">03. Skills</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 hover:bg-primary/5 hover:backdrop-blur-xl px-3 py-2 rounded" href="#">04. Contact</a>
+</div>
+<button class="hidden md:inline-flex items-center justify-center font-mono-label text-mono-label uppercase tracking-widest px-6 py-3 rounded btn-primary">
+            Resume
+        </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center pt-32 pb-section-gap-mobile md:pb-section-gap px-margin-mobile md:px-gutter relative">
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<div class="md:col-span-10 md:col-start-2 flex flex-col gap-6">
+<span class="font-mono-code text-mono-code text-accent-teal">Hi, my name is</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background">
+                        Archibald <span class="text-accent-gold">Creative</span>.
+                    </h1>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface-variant opacity-70">
+                        I build digital experiences.
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                        I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.
+                    </p>
+<div class="mt-8 flex gap-4">
+<button class="btn-primary font-mono-label text-mono-label px-8 py-4 rounded uppercase tracking-widest">
+                            Check out my work!
+                        </button>
+</div>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-1/4 right-10 w-64 h-64 bg-tertiary/5 rounded-full blur-3xl -z-10"></div>
+<div class="absolute bottom-1/4 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</section>
+<!-- About Me Split Layout -->
+<section class="py-section-gap-mobile md:py-section-gap px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="flex items-center gap-4 mb-16">
+<h3 class="font-headline-md text-headline-md text-on-background flex items-center gap-4">
+<span class="font-mono-code text-mono-code text-accent-gold">02.</span> About Me
+                    </h3>
+<div class="h-px bg-outline-variant/30 flex-grow max-w-xs"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left: Philosophy / Visual -->
+<div class="md:col-span-5 relative group">
+<div class="glass-card gradient-border p-8 rounded-xl h-full flex flex-col justify-center min-h-[400px] overflow-hidden relative">
+<img alt="Philosophy Background" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700 grayscale group-hover:grayscale-0" data-alt="A moody, high-contrast abstract digital art composition serving as a backdrop. It features dark geometric shapes and subtle, glowing teal outlines against a deep midnight blue background, embodying a sophisticated tech aesthetic. The lighting is low-key, creating an atmosphere of quiet, professional focus. The image has a subtle film grain texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJp0FDhG7AtgLM_nuvDIVJWnoSyVC7zidTMqgKXu4f4HpU8_-OmBDc50cwW8U8_ExW6sFR1Ed_N9570UakwhlAC2M4huS3-7a4QJmeqqNq-3AI__upAD8WpxWhsnN95GTwdV--0w_pbw9N6BktpJD8R_mGnkSMNSdXYpe3OsNccjPIqheq5ePHNnusbIB0s8Eb3RN-W1LRt0UxdRzdkYlGxxjjWbYhEqrd1qBRWTyIKpaRI9MklNE9nEbz8Q69ePHv1jBFI-4qc7gw"/>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-accent-gold mb-6" data-weight="fill" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<h4 class="font-headline-md text-headline-md text-on-background mb-4">The Philosophy</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                                    "Engineering precision meets artistic vision. The digital realm is not just functional; it is a canvas for infinite experiential depth."
+                                </p>
+</div>
+</div>
+</div>
+<!-- Right: Narrative -->
+<div class="md:col-span-7 flex flex-col gap-6 font-body-lg text-body-lg text-on-surface-variant justify-center">
+<p>
+                            Hello! My name is Archibald and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML &amp; CSS!
+                        </p>
+<p>
+                            Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
+                        </p>
+<p>
+                            Here are a few technologies I've been working with recently:
+                        </p>
+<ul class="grid grid-cols-2 gap-2 font-mono-code text-mono-code mt-4">
+<li class="flex items-center gap-2"><span class="text-accent-gold">▹</span> JavaScript (ES6+)</li>
+<li class="flex items-center gap-2"><span class="text-accent-gold">▹</span> TypeScript</li>
+<li class="flex items-center gap-2"><span class="text-accent-gold">▹</span> React</li>
+<li class="flex items-center gap-2"><span class="text-accent-gold">▹</span> Node.js</li>
+<li class="flex items-center gap-2"><span class="text-accent-gold">▹</span> Tailwind CSS</li>
+<li class="flex items-center gap-2"><span class="text-accent-gold">▹</span> WebGL</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center py-10 px-margin-mobile gap-8 bg-background border-t border-outline-variant/20">
+<div class="font-headline-md text-headline-md text-on-surface">
+            CREATIVE.ARCHITECT
+        </div>
+<div class="flex gap-6 font-mono-label text-mono-label">
+<a class="text-outline hover:text-primary transition-transform duration-300 hover:translate-y-[-2px] scale-95 active:scale-90" href="#">SOURCE_CODE</a>
+<a class="text-outline hover:text-primary transition-transform duration-300 hover:translate-y-[-2px] scale-95 active:scale-90" href="#">PROFESSIONAL_NETWORK</a>
+<a class="text-outline hover:text-primary transition-transform duration-300 hover:translate-y-[-2px] scale-95 active:scale-90" href="#">MICRO_BLOG</a>
+</div>
+<div class="font-mono-label text-mono-label text-secondary">
+            © 2024 ARCHITECT. ENGINEERED FOR PRECISION.
+        </div>
+</footer>
+</body></html>

@@ -25,35 +25,34 @@ export default function LoadingScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-[var(--bg-primary)] flex flex-col items-center justify-center transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[9999] bg-[#131313] flex flex-col items-center justify-center transition-opacity duration-500 ${
         progress >= 100 ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
       {/* Logo */}
       <div className="mb-8">
         <h1
-          className="text-3xl font-bold tracking-tight"
-          style={{ fontFamily: 'var(--font-space-grotesk, Space Grotesk, sans-serif)' }}
+          className="text-4xl font-extrabold tracking-tighter text-white uppercase font-heading"
+          style={{ fontFamily: 'var(--font-eb-garamond, EB Garamond, serif)' }}
         >
-          <span className="text-[var(--text-primary)]">V</span>
-          <span className="text-[var(--accent)]">.</span>
+          VASU GOEL
         </h1>
       </div>
 
       {/* Progress Bar */}
-      <div className="w-48 h-0.5 bg-white/5 rounded-full overflow-hidden">
+      <div className="w-56 h-[3px] bg-[#1a1a1a] border border-surface-variant overflow-hidden rounded-none">
         <div
-          className="h-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] rounded-full transition-all duration-200"
+          className="h-full bg-accent transition-all duration-200"
           style={{ width: `${Math.min(progress, 100)}%` }}
         />
       </div>
 
       {/* Loading Text */}
       <p
-        className="mt-4 text-xs text-[var(--text-secondary)] tracking-widest"
+        className="mt-4 text-[10px] text-accent font-mono tracking-[0.2em]"
         style={{ fontFamily: 'var(--font-jetbrains-mono, monospace)' }}
       >
-        INITIALIZING
+        INITIALIZING // {Math.min(Math.floor(progress), 100)}%
       </p>
     </div>
   );

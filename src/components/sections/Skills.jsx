@@ -6,26 +6,24 @@ import GlassCard from '@/components/ui/GlassCard';
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding relative">
-      {/* Background accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--accent)]/5 rounded-full blur-[150px] pointer-events-none" />
-
+    <section id="skills" className="section-padding relative border-b border-surface-variant">
       <div className="max-w-6xl mx-auto relative">
-        <SectionHeading title="Skills" subtitle="// tech stack" align="center" />
+        <SectionHeading title="Technical Inventory" subtitle="RESEARCH // 04" align="center" />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {skillCategories.map((category, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category) => (
             <GlassCard
               key={category.title}
               className="group"
+              hover={true}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl text-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-xl text-accent transition-transform duration-300 group-hover:scale-110">
                   {category.icon}
                 </span>
                 <h3
-                  className="text-lg font-semibold text-[var(--text-primary)]"
-                  style={{ fontFamily: 'var(--font-space-grotesk, Space Grotesk, sans-serif)' }}
+                  className="text-xl font-extrabold text-white"
+                  style={{ fontFamily: 'var(--font-eb-garamond, EB Garamond, serif)' }}
                 >
                   {category.title}
                 </h3>
@@ -34,7 +32,7 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 rounded-lg text-xs bg-white/5 text-[var(--text-secondary)] border border-white/5 hover:border-[var(--accent)]/20 hover:text-[var(--accent)] hover:bg-[var(--accent)]/5 transition-all duration-300 cursor-default"
+                    className="px-2.5 py-1 text-xs font-mono text-muted tag-border border-surface-variant hover:border-accent hover:text-accent transition-all duration-200 cursor-default"
                     style={{ fontFamily: 'var(--font-jetbrains-mono, monospace)' }}
                   >
                     {skill}

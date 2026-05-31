@@ -19,8 +19,8 @@ export default function Scene({ children, className = '' }) {
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
-          <pointLight position={[10, 10, 10]} intensity={0.8} color="#38BDF8" />
-          <pointLight position={[-10, -10, -5]} intensity={0.3} color="#818CF8" />
+          <pointLight position={[10, 10, 10]} intensity={0.8} color="#c6f311" />
+          <pointLight position={[-10, -10, -5]} intensity={0.3} color="#ffffff" />
           {children}
           <Preload all />
         </Suspense>

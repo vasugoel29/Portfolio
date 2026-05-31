@@ -5,44 +5,42 @@ import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-padding relative">
+    <section id="experience" className="section-padding relative border-b border-surface-variant">
       <div className="max-w-4xl mx-auto">
-        <SectionHeading title="Experience" subtitle="// journey" />
+        <SectionHeading title="Work History" subtitle="ARCHIVE // 05" />
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-gradient-to-b from-[var(--accent)] via-[var(--accent-secondary)] to-transparent" />
+          <div className="absolute left-[19px] top-0 bottom-0 w-px bg-surface-variant" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-14">
-                {/* Timeline Dot */}
-                <div className="absolute left-[12px] top-1.5 w-[15px] h-[15px] rounded-full border-2 border-[var(--accent)] bg-[var(--bg-primary)]">
-                  <div className="absolute inset-1 rounded-full bg-[var(--accent)] animate-pulse" />
-                </div>
+              <div key={index} className="relative pl-14 animate-fade-in-up">
+                {/* Timeline Dot (Square) */}
+                <div className="absolute left-[14px] top-2.5 w-3 h-3 bg-accent transition-all duration-300 group-hover:scale-125" />
 
                 {/* Card */}
-                <div className="glass rounded-xl p-6 hover:border-[var(--border-hover)] transition-all duration-500">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                <div className="card-border p-8 transition-all duration-300 rounded-none hover:border-accent hover:shadow-[4px_4px_0px_0px_var(--accent)] hover:-translate-y-0.5">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
                     <h3
-                      className="text-lg font-bold text-[var(--text-primary)]"
-                      style={{ fontFamily: 'var(--font-space-grotesk, Space Grotesk, sans-serif)' }}
+                      className="text-2xl font-extrabold text-white leading-tight tracking-tight"
+                      style={{ fontFamily: 'var(--font-eb-garamond, EB Garamond, serif)' }}
                     >
                       {exp.role}
                     </h3>
                     <span
-                      className="text-xs text-[var(--accent)] px-3 py-1 rounded-full bg-[var(--accent)]/10 w-fit"
+                      className="text-xs font-mono text-accent px-2.5 py-1 border border-accent bg-accent/5 w-fit"
                       style={{ fontFamily: 'var(--font-jetbrains-mono, monospace)' }}
                     >
                       {exp.period}
                     </span>
                   </div>
 
-                  <p className="text-sm text-[var(--accent-secondary)] mb-3 font-medium">
+                  <p className="text-xs font-mono text-white/80 uppercase tracking-widest mb-4">
                     {exp.company}
                   </p>
 
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+                  <p className="text-sm font-mono text-muted leading-relaxed mb-6">
                     {exp.description}
                   </p>
 
@@ -50,7 +48,7 @@ export default function Experience() {
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-md text-xs bg-white/5 text-[var(--text-secondary)] border border-white/5"
+                        className="px-2 py-1 text-[11px] font-mono text-muted tag-border border-surface-variant"
                         style={{ fontFamily: 'var(--font-jetbrains-mono, monospace)' }}
                       >
                         {tech}

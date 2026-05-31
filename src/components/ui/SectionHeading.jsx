@@ -3,20 +3,22 @@
 export default function SectionHeading({ title, subtitle, align = 'left' }) {
   return (
     <div className={`mb-16 ${align === 'center' ? 'text-center' : ''}`}>
-      <p
-        className="text-[var(--accent)] text-sm font-medium tracking-[0.2em] uppercase mb-3"
-        style={{ fontFamily: 'var(--font-jetbrains-mono, monospace)' }}
-      >
-        {subtitle}
-      </p>
+      {subtitle && (
+        <p
+          className="text-accent text-xs font-semibold tracking-[0.15em] uppercase mb-2"
+          style={{ fontFamily: 'var(--font-jetbrains-mono, monospace)' }}
+        >
+          {subtitle}
+        </p>
+      )}
       <h2
-        className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight"
-        style={{ fontFamily: 'var(--font-space-grotesk, Space Grotesk, sans-serif)' }}
+        className="text-4xl md:text-5xl font-extrabold text-white leading-none tracking-tight"
+        style={{ fontFamily: 'var(--font-eb-garamond, EB Garamond, serif)' }}
       >
         {title}
       </h2>
       <div
-        className={`mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] ${
+        className={`mt-4 h-[2px] w-16 bg-accent ${
           align === 'center' ? 'mx-auto' : ''
         }`}
       />

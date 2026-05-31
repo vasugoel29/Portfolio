@@ -1,21 +1,21 @@
 // ─── Color Palette ─────────────────────────────────────────────
 export const colors = {
-  bgPrimary: '#050816',
-  bgSurface: '#111827',
-  accent: '#38BDF8',
-  accentSecondary: '#818CF8',
-  textPrimary: '#E5E7EB',
-  textSecondary: '#9CA3AF',
-  glow: 'rgba(56, 189, 248, 0.15)',
+  bgPrimary: '#131313',
+  bgSurface: '#131313',
+  accent: '#c6f311',
+  accentSecondary: '#ffffff',
+  textPrimary: '#ffffff',
+  textSecondary: '#c9c6c0',
+  border: '#353535',
+  borderAccent: '#c6f311',
 };
 
 // ─── Navigation ────────────────────────────────────────────────
 export const navLinks = [
-  { id: 'about', title: 'About' },
-  { id: 'projects', title: 'Projects' },
-  { id: 'skills', title: 'Skills' },
-  { id: 'experience', title: 'Experience' },
-  { id: 'contact', title: 'Contact' },
+  { id: 'about', title: 'ABOUT' },
+  { id: 'projects', title: 'SYSTEMS' },
+  { id: 'skills', title: 'SKILLS' },
+  { id: 'experience', title: 'EXPERIENCE' },
 ];
 
 // ─── Projects ──────────────────────────────────────────────────

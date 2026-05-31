@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CREATIVE.ARCHITECT - Projects</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Design System -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e4e2e4",
+                        "secondary-fixed": "#d9e2ff",
+                        "tertiary": "#e7bf99",
+                        "inverse-surface": "#e4e2e4",
+                        "surface-bright": "#39393b",
+                        "surface-variant": "#343536",
+                        "surface-container": "#1f1f21",
+                        "surface-container-highest": "#343536",
+                        "surface-container-low": "#1b1b1d",
+                        "surface-container-lowest": "#0e0e10",
+                        "secondary": "#bcc6e6",
+                        "primary": "#b9c7e4",
+                        "surface-tint": "#b9c7e4",
+                        "on-secondary": "#263049",
+                        "surface-container-high": "#2a2a2c",
+                        "primary-container": "#0a192f",
+                        "on-secondary-container": "#aab4d4",
+                        "on-tertiary-container": "#9d7b5a",
+                        "outline-variant": "#44474d",
+                        "background": "#131315",
+                        "on-primary-container": "#74829d",
+                        "tertiary-fixed-dim": "#e7bf99",
+                        "on-secondary-fixed-variant": "#3c4661",
+                        "secondary-container": "#3c4661",
+                        "inverse-primary": "#515f78",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#0d1c32",
+                        "tertiary-container": "#281400",
+                        "outline": "#8f9097",
+                        "on-surface": "#e4e2e4",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c5c6cd",
+                        "on-tertiary-fixed": "#2b1701",
+                        "surface": "#131315",
+                        "on-tertiary": "#432b10",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-dim": "#131315",
+                        "on-primary-fixed-variant": "#39475f",
+                        "on-secondary-fixed": "#101b33",
+                        "on-primary": "#233148",
+                        "inverse-on-surface": "#303032",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "tertiary-fixed": "#ffdcbd",
+                        "secondary-fixed-dim": "#bcc6e6",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#5d4124"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "section-gap-mobile": "80px",
+                        "gutter": "24px",
+                        "section-gap": "160px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "mono-code": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "mono-label": ["13px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "mono-code": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["15px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131315;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #343536;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #44474d;
+        }
+        /* Glow effect utilities */
+        .hover-glow:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 15px rgba(231, 191, 153, 0.1);
+        }
+        
+        /* 3D Tilt Utilities */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transition: transform 0.1s ease;
+            will-change: transform;
+        }
+        .tilt-card.tilt-active {
+            transition: none;
+        }
+        
+        /* Reveal Animations */
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-tertiary/30 selection:text-tertiary-fixed min-h-screen flex flex-col relative z-0">
+<!-- Canvas for particle background -->
+<canvas class="fixed inset-0 pointer-events-none z-[-1]" id="particle-canvas"></canvas>
+<!-- TopNavBar JSON Component -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 md:px-16 py-6 bg-surface/70 backdrop-blur-lg border-b border-primary/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">
+            CREATIVE.ARCHITECT
+        </div>
+<div class="hidden md:flex items-center gap-8 font-mono-label text-mono-label uppercase tracking-widest">
+<!-- Active state logic applies to '01. Work' based on intent -->
+<a class="text-tertiary-fixed font-bold border-b border-tertiary-fixed pb-1" href="#">01. Work</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 hover:bg-primary/5 hover:backdrop-blur-xl px-2 py-1 rounded-DEFAULT" href="#">02. About</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 hover:bg-primary/5 hover:backdrop-blur-xl px-2 py-1 rounded-DEFAULT" href="#">03. Skills</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 hover:bg-primary/5 hover:backdrop-blur-xl px-2 py-1 rounded-DEFAULT" href="#">04. Contact</a>
+</div>
+<button class="font-mono-label text-mono-label uppercase tracking-widest border border-primary text-primary px-6 py-3 rounded-DEFAULT hover:bg-primary/10 transition-colors duration-300">
+            Resume
+        </button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-40 pb-section-gap relative z-10">
+<!-- Section Header -->
+<header class="mb-20">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">
+                Selected Works<span class="text-tertiary">.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                A curated selection of high-fidelity digital experiences, combining technical precision with avant-garde aesthetics. Engineered for the modern web.
+            </p>
+</header>
+<!-- Featured Project Section (Asymmetric Layout) -->
+<section class="mb-section-gap">
+<div class="group relative flex flex-col lg:flex-row gap-0 rounded-xl overflow-hidden bg-surface-container/40 backdrop-blur-xl border border-primary/10 hover:border-tertiary/30 transition-all duration-500 hover-glow tilt-card">
+<!-- Image Container -->
+<div class="w-full lg:w-7/12 relative overflow-hidden aspect-video lg:aspect-auto" style="transform: translateZ(20px);">
+<div class="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+<img alt="Featured Project" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="A sophisticated digital interface dashboard displayed on a high-resolution monitor in a dark, minimalist studio. The UI features a dark mode aesthetic with glowing glassmorphic panels, deep slate backgrounds, and vibrant gold data visualization accents. The lighting is moody and cinematic, highlighting the sleek technical precision of the design against an infinite black canvas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv2IUjvWraJDUBFqhxZgl9uEBujuGFrhCecGbgEd9K-AUaIpGpXxYC81gktcMQxOxavO6Mn76xXOaAAaUXa70ohfGGLPygww59HydcWClnKACK-RLxz3m5OmcGD0rlPdGl08uSOqOqJROoglTpwZcx_ycDTd44IabShjGtbrSX2HhL28yc399IwD-fUGPATFN85UOnQoMyTJmiPYgGCOx6yoJ6CpFk2jSV5ALzPTeV8vewkRsMODACwHVSiKXDLVrmSDvHXzpgmogg"/>
+<!-- Featured Tag -->
+<div class="absolute top-6 left-6 z-20 bg-primary/10 backdrop-blur-md border border-primary/20 px-3 py-1.5 rounded-DEFAULT flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-mono-label text-mono-label text-primary uppercase">Featured Case Study</span>
+</div>
+</div>
+<!-- Content Container -->
+<div class="w-full lg:w-5/12 p-8 lg:p-12 flex flex-col justify-center relative z-20 bg-surface-container/60" style="transform: translateZ(30px);">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-tertiary transition-colors duration-300">Project Quantum</h2>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">React.js</span>
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">WebGL</span>
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">Framer Motion</span>
+</div>
+<div class="space-y-6 font-body-sm text-body-sm text-on-surface-variant mb-10">
+<div>
+<strong class="text-on-surface block mb-1">The Challenge:</strong>
+                            Architect a high-performance, real-time data visualization platform that doesn't compromise on aesthetic quality, handling millions of data points smoothly in the browser.
+                        </div>
+<div>
+<strong class="text-on-surface block mb-1">The Solution:</strong>
+                            Implemented a bespoke WebGL rendering engine layered beneath a reactive React frontend, utilizing glassmorphic UI elements to create depth without sacrificing framerate.
+                        </div>
+</div>
+<a class="inline-flex items-center gap-2 font-mono-label text-mono-label text-tertiary group/btn w-max" href="#">
+<span>View Details</span>
+<span class="material-symbols-outlined group-hover/btn:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Project Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Grid Card 1 -->
+<article class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container/40 backdrop-blur-xl border border-primary/10 hover:border-tertiary/30 transition-all duration-500 hover-glow tilt-card reveal-hidden">
+<div class="h-64 relative overflow-hidden border-b border-primary/10" style="transform: translateZ(10px);">
+<img alt="Project Alpha" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="A sleek cybernetic server room or hardware setup bathed in dark, moody shadows with bright glowing teal and gold indicator lights. The aesthetic is highly technical, pristine, and futuristic, embodying a high-end enterprise system architecture within a minimalist space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpMA_1BCY2wvIkJjpDUoZ40iAiDDGl-muJSR889fTaAg-aRSSvyvpEMEq8YXd-dvTKYSvrPDPIhZgr2_uOar48O8PlRc3vR6S_V4BxNm6YRgkHojwbzeK9ezW_4ILQ6VRc2E3YwPpKInQmEk_haMRO0qsabdy3dHfEiRGk1i5GUtxjTIh2vRhTjpYKtJ3SQbyB7JWKgbOsu6N2rP8Og9xIxqBsQ5nLvsqoHXV72xB62Vc5AkRbXzedoYhcOmFh5io02dz2xD2zGEgy"/>
+</div>
+<div class="p-8 flex flex-col flex-grow" style="transform: translateZ(20px);">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-tertiary transition-colors duration-300">Nexus Core Architecture</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                        A robust, scalable backend architecture paired with an intuitive enterprise dashboard for managing distributed microservices globally.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">Node.js</span>
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">GraphQL</span>
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">Kubernetes</span>
+</div>
+<a class="inline-flex items-center gap-2 font-mono-label text-mono-label text-on-surface hover:text-tertiary transition-colors w-max" href="#">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Grid Card 2 -->
+<article class="group relative flex flex-col rounded-xl overflow-hidden bg-surface-container/40 backdrop-blur-xl border border-primary/10 hover:border-tertiary/30 transition-all duration-500 hover-glow tilt-card reveal-hidden">
+<div class="h-64 relative overflow-hidden border-b border-primary/10" style="transform: translateZ(10px);">
+<img alt="Project Beta" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="An abstract, generative art piece featuring flowing, fluid gradient meshes in deep slate blue, charcoal, and shimmering gold. The visual represents complex algorithms translated into smooth, organic, high-contrast minimal forms on a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADupgeWyKwyq2cPtPBEN_UTPcXjfsDPiNWMep2poIc1oJoVv8g1Rs_R4PJQOmGAPSkT8VUblWUBAqwCAsjyTFCEq6mkM7oPoIKEB3wQ5Lw4IhnP6e5tYC7hFKFSqkysHOlns-A--lbSs07TmaeePLGBN6operBkJ7p95LbqY0XAL3krx2ODBaC5etCcnV2aANsLdjNDNA0CogmJma_CWZoqs7ItAJS9oAUx0jnHnykv0f6Pb90_WxCy8ZhLyXMsBc_-oStMzqyuaEy"/>
+</div>
+<div class="p-8 flex flex-col flex-grow" style="transform: translateZ(20px);">
+<h3 class="font-headline-md text-[24px] leading-tight text-on-surface mb-3 group-hover:text-tertiary transition-colors duration-300">Aura Generative Engine</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">
+                        An experimental creative coding project that generates unique visual identities based on user biometric input and audio frequencies.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-auto mb-6">
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">Three.js</span>
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">GLSL</span>
+<span class="font-mono-label text-mono-label px-2 py-1 rounded-DEFAULT bg-primary/5 border border-primary/20 text-primary transition-all duration-300 hover:shadow-[0_0_12px_rgba(185,199,228,0.4)] hover:bg-primary/10 hover:-translate-y-0.5 cursor-default">WebAudio API</span>
+</div>
+<a class="inline-flex items-center gap-2 font-mono-label text-mono-label text-on-surface hover:text-tertiary transition-colors w-max" href="#">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer JSON Component -->
+<footer class="w-full max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center py-10 px-margin-mobile gap-8 border-t border-outline-variant/20 bg-background mt-auto relative z-10">
+<div class="font-headline-md text-headline-md text-on-surface">
+            CREATIVE.ARCHITECT
+        </div>
+<div class="flex items-center gap-6 font-mono-label text-mono-label">
+<a class="text-outline hover:text-primary hover:translate-y-[-2px] transition-transform duration-300 scale-95 active:scale-90" href="#">SOURCE_CODE</a>
+<a class="text-outline hover:text-primary hover:translate-y-[-2px] transition-transform duration-300 scale-95 active:scale-90" href="#">PROFESSIONAL_NETWORK</a>
+<a class="text-outline hover:text-primary hover:translate-y-[-2px] transition-transform duration-300 scale-95 active:scale-90" href="#">MICRO_BLOG</a>
+</div>
+<div class="font-mono-label text-mono-label text-secondary">
+            © 2024 ARCHITECT. ENGINEERED FOR PRECISION.
+        </div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+    // 1. Intersection Observer for scroll reveals
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                    entry.target.classList.remove('reveal-hidden');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-hidden').forEach(el => {
+            observer.observe(el);
+        });
+    });
+
+    // 2. 3D Tilt Effect on hover
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            card.classList.add('tilt-active');
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const tiltX = ((y - centerY) / centerY) * -3; // Max 3 deg rotation
+            const tiltY = ((x - centerX) / centerX) * 3;
+            
+            card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.01, 1.01, 1.01)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('tilt-active');
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            // Slight delay to allow CSS transition to take over smoothly
+            setTimeout(() => {
+                if(!card.classList.contains('tilt-active')) {
+                   card.style.transform = ''; 
+                }
+            }, 100);
+        });
+    });
+
+    // 3. Mouse-tracking Particle Background
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const mouse = { x: null, y: null, radius: 150 };
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+    });
+    
+    window.addEventListener('mouseout', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    class Particle {
+        constructor(x, y, dx, dy, size) {
+            this.x = x;
+            this.y = y;
+            this.dx = dx;
+            this.dy = dy;
+            this.size = size;
+            this.baseX = this.x;
+            this.baseY = this.y;
+            this.density = (Math.random() * 30) + 1;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(185, 199, 228, 0.15)'; // primary color faded
+            ctx.fill();
+        }
+        update() {
+            if (mouse.x != null) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = mouse.radius;
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < mouse.radius) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    if (this.x !== this.baseX) {
+                        let dx = this.x - this.baseX;
+                        this.x -= dx / 20;
+                    }
+                    if (this.y !== this.baseY) {
+                        let dy = this.y - this.baseY;
+                        this.y -= dy / 20;
+                    }
+                }
+            } else {
+                if (this.x !== this.baseX) {
+                    let dx = this.x - this.baseX;
+                    this.x -= dx / 20;
+                }
+                if (this.y !== this.baseY) {
+                    let dy = this.y - this.baseY;
+                    this.y -= dy / 20;
+                }
+            }
+
+            // Slow drift
+            this.x += this.dx * 0.1;
+            this.y += this.dy * 0.1;
+            this.baseX += this.dx * 0.1;
+            this.baseY += this.dy * 0.1;
+
+            if (this.baseX < 0 || this.baseX > width) this.dx = -this.dx;
+            if (this.baseY < 0 || this.baseY > height) this.dy = -this.dy;
+
+            this.draw();
+        }
+    }
+
+    function initParticles() {
+        particles = [];
+        let numberOfParticles = (width * height) / 12000;
+        for (let i = 0; i < numberOfParticles; i++) {
+            let size = (Math.random() * 1.5) + 0.5;
+            let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+            let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+            let dx = (Math.random() - 0.5) * 2;
+            let dy = (Math.random() - 0.5) * 2;
+            particles.push(new Particle(x, y, dx, dy, size));
+        }
+    }
+
+    function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+        }
+        connectParticles();
+    }
+
+    function connectParticles() {
+        let opacityValue = 1;
+        for (let a = 0; a < particles.length; a++) {
+            for (let b = a; b < particles.length; b++) {
+                let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x))
+                    + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+                if (distance < (canvas.width / 8) * (canvas.height / 8)) {
+                    opacityValue = 1 - (distance / 15000);
+                    ctx.strokeStyle = 'rgba(185, 199, 228,' + opacityValue * 0.15 + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[a].x, particles[a].y);
+                    ctx.lineTo(particles[b].x, particles[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    initParticles();
+    animateParticles();
+</script>
+</body></html>

@@ -13,22 +13,27 @@ export default function ParticleField({ count = 1500, mouse }) {
     const colors = new Float32Array(count * 3);
     const sizes = new Float32Array(count);
 
-    const accentColor = new THREE.Color('#38BDF8');
-    const secondaryColor = new THREE.Color('#818CF8');
-    const dimColor = new THREE.Color('#1f2937');
+    const accentColor = new THREE.Color('#c6f311');
+    const secondaryColor = new THREE.Color('#ffffff');
+    const dimColor = new THREE.Color('#1f2020');
+    // Deterministic stateless hash function to satisfy purity/immutability lint rules
+    const hash = (x) => {
+      const h = Math.sin(x) * 10000;
+      return h - Math.floor(h);
+    };
 
     for (let i = 0; i < count; i++) {
-      // Distribute in a sphere-like volume
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      const radius = 3 + Math.random() * 4;
+      // Distribute in a sphere-like volume using independent hash offsets
+      const theta = hash(i) * Math.PI * 2;
+      const phi = Math.acos(2 * hash(i + count) - 1);
+      const radius = 3 + hash(i + count * 2) * 4;
 
       positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
       positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i * 3 + 2] = radius * Math.cos(phi) - 2;
 
       // Color gradient
-      const t = Math.random();
+      const t = hash(i + count * 3);
       const color = t < 0.3
         ? accentColor.clone()
         : t < 0.6
@@ -38,7 +43,7 @@ export default function ParticleField({ count = 1500, mouse }) {
       colors[i * 3 + 1] = color.g;
       colors[i * 3 + 2] = color.b;
 
-      sizes[i] = Math.random() * 3 + 0.5;
+      sizes[i] = hash(i + count * 4) * 3 + 0.5;
     }
 
     return { positions, colors, sizes };
@@ -71,7 +76,7 @@ export default function ParticleField({ count = 1500, mouse }) {
     <group>
       <pointLight
         ref={lightRef}
-        color="#38BDF8"
+        color="#c6f311"
         intensity={2}
         distance={8}
       />

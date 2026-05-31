@@ -41,11 +41,11 @@ export default function FloatingGeometry() {
       >
         {Geometry[geo.type]}
         <meshStandardMaterial
-          color="#38BDF8"
+          color="#c6f311"
           wireframe
           transparent
           opacity={0.15}
-          emissive="#38BDF8"
+          emissive="#c6f311"
           emissiveIntensity={0.1}
         />
       </mesh>
